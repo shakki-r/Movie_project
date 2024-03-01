@@ -1,0 +1,11 @@
+{% extends 'base_layout.html' %}
+{% block body %}
+
+<form method="POST">
+{% csrf_token %}
+<h1>{{name.name}}</h1>
+    <P>Are you sure  delete</P>
+    <input class="btn btn-danger" type="submit" value="Delete">
+
+</form>
+{% endblock %}

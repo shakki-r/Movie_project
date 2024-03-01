@@ -1,0 +1,136 @@
+{% extends 'base_layout.html' %}
+{% block body %}
+<div class="body">
+        <div class="box">
+            <h1>Add Movie</h1>
+            <div class="formdiv">
+                <form action="" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="text" placeholder="Name" name="name">
+
+                    <input type="text" placeholder="Description" name="description">
+
+                    <input type="number" placeholder="Year" name="year">
+                    <input type="file"  name="image" >
+                    <input class="btn" type="submit" value="Add">
+                    {% for msg in messages %}
+                    <h1> {{msg}} </h1>
+                    {% endfor %}
+                </form>
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        .body {
+            width: 100%;
+            height: 80vh;
+            /* background-color: steelblue,lawngreen; */
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .body .box {
+            width: 100%;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 50px;
+
+            /* background-color: springgreen; */
+        }
+
+        .body .box h1 {
+            color: white;
+            text-align: center;
+            text-transform: uppercase;
+
+        }
+
+        .body .box .formdiv {
+            /* background-color: rebeccapurple; */
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+        }
+
+        .body .box .formdiv form {
+            display: flex;
+            flex-direction: column;
+
+
+
+        }
+
+        .body .box .formdiv form input {
+            font-size: 14px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 2px solid lime;
+            outline: none;
+            background-color: black;
+            color: white;
+
+        }
+
+        .body .box .formdiv form input::placeholder {
+            color: gray;
+        }
+
+        .body .box .formdiv form .btn {
+            background-color: lime;
+            color: white;
+            cursor: pointer;
+            transition: .5s ease-in-out;
+
+        }
+
+        .body .box .formdiv form .btn:hover {
+            background-color: black;
+        }
+
+        @media (max-width:769px) {
+            h1 {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width:991px) {
+
+            h1 {
+                font-size: 20px;
+            }
+
+        }
+        @media (min-width:1000px) {
+            .body .box{
+        width: 50%;
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center ;
+        padding: 50px;
+
+
+    }
+
+        }
+    </style>
+
+{% endblock %}

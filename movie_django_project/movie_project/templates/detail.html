@@ -1,0 +1,11 @@
+{% extends 'base_layout.html' %}
+
+{% block body %}
+
+<h1 style="color:red;">{{movie.name}}</h1>
+<p>{{movie.description}}</p>
+<h1 class="w-100">{{movie.year}}</h1>
+
+<a class=" px-5 py-2 btn-info btn" href="{% url 'movieapp:update' movie.id %}">Edit</a>
+<a class=" mx-2 px-5 py-2 btn-danger btn" href="{% url 'movieapp:delete' movie.id %}">Delete</a>
+{% endblock %}
